@@ -1,10 +1,10 @@
-FROM php:7.4-fpm-alpine
+FROM php:7.3.16-fpm-alpine
 
 LABEL maintainer="Robbio <github.com/pigr8>" \
       architecture="amd64/x86_64" \
       alpine-version="3.11.2" \
       apache-version="2.4.43" \
-      php-fpm-version="7.4.4" \
+      php-fpm-version="7.3.16" \
       myBB-version="1.8.2.2" \
       org.opencontainers.image.title="mybb-fpm-apache" \
       org.opencontainers.image.description="myBB image running on Alpine Linux." \
