@@ -34,7 +34,8 @@ RUN set -ex; \
 		postgresql-dev \
 	; \
 	\
-	docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir --with-png-dir --with-freetype-dir --with-xpm-dir; \
+	docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir --with-png-dir \
+	        --with-freetype-dir --with-xpm-dir --with-zlib-dir; \
 	docker-php-ext-install -j "$(nproc)" \
 		gd \
 		mysqli \
