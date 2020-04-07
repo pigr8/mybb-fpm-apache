@@ -30,10 +30,11 @@ RUN set -ex; \
 		libjpeg-turbo-dev \
 		libpng-dev \
 		libwebp-dev \
+		libxpm-dev \
 		postgresql-dev \
 	; \
 	\
-	docker-php-ext-configure gd; \
+	docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir --with-png-dir --with-freetype-dir --with-xpm-dir; \
 	docker-php-ext-install -j "$(nproc)" \
 		gd \
 		mysqli \
