@@ -35,7 +35,7 @@ RUN set -ex; \
 	; \
 	\
 #	docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir --with-png-dir --with-freetype-dir --with-xpm-dir --with-zlib-dir; \
-        docker-php-ext-configure gd --with-freetype --with-jpeg --with-png --with-zlib ; \
+        docker-php-ext-configure gd --with-freetype --with-jpeg; \
         docker-php-ext-install -j "$(nproc)" \
 		gd \
 		mysqli \
