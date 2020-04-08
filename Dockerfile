@@ -34,13 +34,15 @@ RUN set -ex; \
 		postgresql-dev \
 	; \
 	\
-	docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir --with-png-dir \
-	        --with-freetype-dir --with-xpm-dir --with-zlib-dir; \
-	docker-php-ext-install -j "$(nproc)" \
+#	docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir --with-png-dir --with-freetype-dir --with-xpm-dir --with-zlib-dir; \
+        docker-php-ext-configure gd --with-freetype --with-jpeg --with-png --with-zlib ; \
+        docker-php-ext-install -j "$(nproc)" \
 		gd \
 		mysqli \
 		opcache \
 		pgsql \
+		zip \
+		exif \
 	; \
 	pecl channel-update pecl.php.net; \
 	pecl install memcached redis; \
