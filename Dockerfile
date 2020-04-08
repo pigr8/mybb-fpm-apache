@@ -31,6 +31,7 @@ RUN set -ex; \
 		libpng-dev \
 		libwebp-dev \
 		libxpm-dev \
+		libzip-dev \
 		postgresql-dev \
 	; \
 	\
