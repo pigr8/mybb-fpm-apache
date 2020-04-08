@@ -1,4 +1,4 @@
-FROM php:7.3.16-fpm-alpine
+FROM php:7.4.4-fpm-alpine
 
 LABEL maintainer="Robbio <github.com/pigr8>" \
       architecture="amd64/x86_64" \
