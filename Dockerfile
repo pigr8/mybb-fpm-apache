@@ -1,15 +1,4 @@
-FROM php:7.4.4-fpm-alpine
-
-LABEL maintainer="Robbio <github.com/pigr8>" \
-      architecture="amd64/x86_64" \
-      alpine-version="3.11.2" \
-      apache-version="2.4.43" \
-      php-fpm-version="7.4.4" \
-      myBB-version="1.8.2.2" \
-      org.opencontainers.image.title="mybb-fpm-apache" \
-      org.opencontainers.image.description="myBB image running on Alpine Linux." \
-      org.opencontainers.image.url="https://hub.docker.com/r/pigr8/mybb-fpm-apache/" \
-      org.opencontainers.image.source="https://github.com/pigr8/mybb-fpm-apache"
+FROM php:fpm-alpine
 
 RUN apk add --no-cache \
 		bash \
@@ -35,8 +24,7 @@ RUN set -ex; \
 		postgresql-dev \
 	; \
 	\
-#	docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir --with-png-dir --with-freetype-dir --with-xpm-dir --with-zlib-dir; \
-        docker-php-ext-configure gd --with-freetype --with-jpeg; \
+        docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp; \
         docker-php-ext-install -j "$(nproc)" \
 		gd \
 		mysqli \
